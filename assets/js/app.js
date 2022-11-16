@@ -1,4 +1,4 @@
-var map, featureList, boroughSearch = [], theaterSearch = [], museumSearch = [];
+var map, featureList, boroughSearch = [], theaterSearch = [], museumSearch = [], trashPins = [];
 
 $(window).resize(function() {
   sizeLayerControl();
@@ -604,3 +604,28 @@ if (!L.Browser.touch) {
 } else {
   L.DomEvent.disableClickPropagation(container);
 }
+
+
+map.on('click', function(e){
+  var popup = L.popup();
+
+  popup.setLatLng(e.latlng)
+  .setContent(
+    '<form>' +
+      '<input type="text" id="title" required></input>' +
+      '<input id="formsub" type="button" value="Submit"></input>' +
+    '</form>'
+  )
+  .openOn(map);
+
+  $('#formsub').on('click', function(){
+    console.log("things");
+    marker = new L.marker(e.latlng);
+    marker.bindPopup(document.getElementById("title").value).openPopup();
+    marker.addTo(map);
+  });
+
+  
+  
+  //Add JS to save marker in DB
+});
