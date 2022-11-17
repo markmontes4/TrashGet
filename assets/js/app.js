@@ -605,27 +605,36 @@ if (!L.Browser.touch) {
   L.DomEvent.disableClickPropagation(container);
 }
 
-
-map.on('click', function(e){
+var markers = {};
+map.on('click', async function(e){
   var popup = L.popup();
 
   popup.setLatLng(e.latlng)
   .setContent(
     '<form>' +
       '<input type="text" id="title" required></input>' +
-      '<input id="formsub" type="button" value="Submit"></input>' +
+      '<input id="formsub" type="button" value="Submit" required></input>' +
     '</form>'
   )
   .openOn(map);
 
-  $('#formsub').on('click', function(){
+  $('#formsub').click(function(ev){
     console.log("things");
     marker = new L.marker(e.latlng);
-    marker.bindPopup(document.getElementById("title").value).openPopup();
+    title = document.getElementById('title').value;
+    // marker.bindPopup(document.getElementById("title").value).openPopup();
+    marker.bindPopup(
+      '<h2>' + title + '</h2> <button id="del-marker-btn"> x </button>'
+      ).openPopup();
     marker.addTo(map);
-  });
-
-  
-  
+    markers[title] = marker;
+    map.closePopup();
+  }); 
   //Add JS to save marker in DB
+});
+
+
+document.getElementById('del-marker-btn').addEventListener('click', function(e){
+  // map.removeLayer(markers[e.title]);
+  console.log("del btn clicked")
 });
