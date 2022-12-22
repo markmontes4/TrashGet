@@ -1,4 +1,10 @@
 var map = L.map('map').setView([45.5152, -122.6784], 10);
+var myPos = [];
+var myIcon = L.icon({
+  iconUrl: 'imgs/arms-up.png',
+  iconSize: [50, 50],
+  iconAnchor: [25, 35],
+})
 
 var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
@@ -6,7 +12,7 @@ var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 async function getAllCoords(e){
-  const data = {lat: 4, lon: 43}
+  const data = {myPos, myIcon}
   const options = {
     method: 'POST',
     headers: {
@@ -25,7 +31,9 @@ if ('geolocation' in navigator) {
   console.log('geolocation is availabe');
   navigator.geolocation.getCurrentPosition(position => {
     console.log(position.coords);
-    map.setView([position.coords.latitude, position.coords.longitude], 15);
+    myPos = [position.coords.latitude, position.coords.longitude]
+    map.setView(myPos, 15);
+    L.marker(myPos, {icon: myIcon}).addTo(map);
   });
 } else {
   console.log('geolocation not available');
