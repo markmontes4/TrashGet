@@ -2,19 +2,13 @@ const express = require('express');
 const router = express.Router();
 const Post = require('../assets/models/target');
 
-router.post('/', async (req,res) => {
-  const post = new Post ({
-    title: req.body.title,
-    description: req.body.description,
-    coords: req.body.coords
-  });
+router.post('/', (req,res) => {
+  console.log(req.body);
+  res.json({
+    latitude: 123123,
+    longitude: 34563456
+   });
 
-  try{
-  const savedPost = await post.save()
-  res.json(savedPost);
-  }catch(err){
-    res.json({message: err})
-  }
 });
 
 module.exports = router;
