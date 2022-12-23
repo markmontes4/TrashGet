@@ -19,6 +19,11 @@ app.use('/post', postRoute);
 app.listen(3000)
 app.use(express.static('public'))
 
-mongoose.connect(process.env.DB_CONNECT, () => {
-  console.log("Connection made!");
-})
+try{
+    mongoose.connect(process.env.DB_CONNECT, () => {
+        console.log("Connection made!");
+      });
+}catch(err){
+    console.log("Did not connect " + err);
+}
+

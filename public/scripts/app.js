@@ -38,3 +38,16 @@ if ('geolocation' in navigator) {
 } else {
   console.log('geolocation not available');
 }
+
+map.addEventListener("click", (e) => {
+  L.marker(e.latlng).addTo(map);
+  console.log(e.latlng);
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(e.latlng)
+  }
+  fetch('/post', options);
+});
