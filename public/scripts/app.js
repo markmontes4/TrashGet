@@ -1,10 +1,21 @@
 var map = L.map('map').setView([45.5152, -122.6784], 10);
 var myPos = [];
+var targetCount = 0;
 var myIcon = L.icon({
   iconUrl: 'imgs/arms-up.png',
   iconSize: [50, 50],
   iconAnchor: [25, 35],
 })
+
+var trashIcon = L.icon({
+  iconUrl: 'imgs/trash-icon.png',
+  iconSize: [50, 50],
+  iconAnchor: [25, 35],
+})
+
+window.onload = () => {
+  getAllCoords();
+}
 
 var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
@@ -12,19 +23,16 @@ var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 async function getAllCoords(e){
-  const data = {myPos, myIcon}
-  const options = {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(data)
-  };
-  console.log('Button pushed!');
-  console.log(options);
-  const res = await fetch('/post', options);
-  const json = await res.json();
-  console.log(json);
+  try{
+    const res = await fetch('/get');
+    const json = await res.json();
+    console.log(json);
+    json.forEach((target) => {
+        L.marker(target.coords, {icon: trashIcon}).addTo(map);
+    })
+  } catch(err){
+      console.log({error: err});
+  }
 }
 
 if ('geolocation' in navigator) {
@@ -40,14 +48,16 @@ if ('geolocation' in navigator) {
 }
 
 map.addEventListener("click", (e) => {
-  L.marker(e.latlng).addTo(map);
-  console.log(e.latlng);
-  const options = {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(e.latlng)
-  }
-  fetch('/post', options);
+  $('#portfolioModal1').modal('show');
+  console.log("modal closed");
+  // L.marker(e.latlng, {icon: trashIcon}).addTo(map);
+  // console.log(e.latlng);
+  // const options = {
+  //   method: 'POST',
+  //   headers: {
+  //     'Content-Type': 'application/json'
+  //   },
+  //   body: JSON.stringify(e.latlng)
+  // }
+  // fetch('/post', options);
 });
