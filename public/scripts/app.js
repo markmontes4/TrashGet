@@ -84,13 +84,13 @@ async function getAllCoords(e){
 if ('geolocation' in navigator) {
   console.log('geolocation is availabe');
   navigator.geolocation.getCurrentPosition(position => {
-    console.log(position.coords);
+    console.log(position.coords.latitude + ", " + position.coords.longitude);
     myPos = [position.coords.latitude, position.coords.longitude]
     map.setView(myPos, 15);
     L.marker(myPos, {icon: myIcon}).addTo(map);
   });
 } else {
-  console.log('geolocation not available');
+  alert('geolocation not available');
 }
 
 map.addEventListener("click", (e) => {
