@@ -108,11 +108,6 @@ map.addEventListener("click", (e) => {
   // fetch('/post', options);
 });
 
-function markerClick(modal){
-
-}
-
 function testButton(){
-  // console.log(markers);
+  console.log(markers);
 }
-
