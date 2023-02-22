@@ -109,5 +109,6 @@ map.addEventListener("click", (e) => {
 });
 
 function testButton(){
+  $('#submitModal').modal('show');
   console.log(markers);
 }
