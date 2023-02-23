@@ -13,6 +13,10 @@ const targetSchema = mongoose.Schema({
     type: Array,
     required: true    
   },
+  img: {
+    type: String,
+    required: true
+  },
   date: {
     type: Date,
     default: Date.now

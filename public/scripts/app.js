@@ -2,6 +2,7 @@ var map = L.map('map').setView([45.5152, -122.6784], 10);
 var myPos = [];
 var markers = {};
 var targetCount = 0;
+var myPos = [];
 var myIcon = L.icon({
   iconUrl: 'imgs/arms-up.png',
   iconSize: [50, 50],
@@ -50,7 +51,7 @@ async function getAllCoords(e){
                                         '<div class="divider-custom-line"></div> ' +
                                     '</div> ' +
                                     '<!-- Portfolio Modal - Image--> ' +
-                                    '<img class="img-fluid rounded mb-5" src="imgs/bridge-garbage.jpg" alt="..." /> ' +
+                                    '<img class="img-fluid rounded mb-5" src="' + target.img + '"alt="..." /> ' +
                                     '<!-- Portfolio Modal - Text--> ' +
                                     '<p class="mb-4">' + target.description + '</p> ' +
                                     '<button class="btn btn-primary" data-bs-dismiss="modal"> ' +
@@ -112,3 +113,39 @@ function testButton(){
   $('#submitModal').modal('show');
   console.log(markers);
 }
+
+function submitEntry(data) {
+  console.log("Submitted! ");
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+
+    body: JSON.stringify(data)
+  }
+  fetch('/post', options);
+}
+
+const submitForm = document.getElementById('submitForm')
+submitForm.addEventListener('submit', event =>{
+  event.preventDefault();
+  var img64 = null;
+  const formData = new FormData(submitForm);
+  const data = Object.fromEntries(formData);
+  console.log(formData.get('file'));
+
+  var reader = new FileReader();
+  reader.addEventListener("load", async () => {
+    var jsondata = {
+      title: data.title,
+      description: data.description,
+      img: reader.result,
+      coords: myPos
+    }
+    console.log(jsondata);
+    submitEntry(jsondata);
+  });
+  reader.readAsDataURL(formData.get('file'));
+  // submitEntry(data);
+});

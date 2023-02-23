@@ -39,19 +39,21 @@
                     <div class="divider-custom-line"></div>
                   </div>
                   <!-- Portfolio Modal - Image-->
-                  <form action="">
-                    <input class="form-control form-control-lg" type="text" placeholder="Entry Title..." aria-label=".form-control-lg example"><br>
+                  <form id="submitForm" action="">
+                    <input name="title" class="form-control form-control-lg" type="text" placeholder="Entry Title..." aria-label=".form-control-lg example"><br>
                     <div class="mb-3">
-                      <textarea class="form-control" id="descriptionSubmit" rows="3" placeholder="Type description here..."></textarea>
+                      <textarea name="description" class="form-control" id="descriptionSubmit" rows="3" placeholder="Type description here..."></textarea>
                     </div>
                     <div>
-                      <input class="form-control form-control-lg" id="formFileLg" type="file">
+                      <input name="file" class="form-control form-control-lg" id="file" type="file">
                     </div>
-
+                     <!-- Portfolio Modal - Text--><br><br>
+                    <button class="btn btn-primary" id="modalSubmit" type="submit">
+                      <i class="fas fa-xmark fa-fw"></i> Submit </button>
+                    <button class="btn btn-primary" data-bs-dismiss="modal">
+                      <i class="fas fa-xmark fa-fw"></i> Close </button>
                   </form>
-                  <!-- Portfolio Modal - Text--><br><br>
-                  <button class="btn btn-primary" data-bs-dismiss="modal">
-                    <i class="fas fa-xmark fa-fw"></i> Close Window </button>
+                 
                 </div>
               </div>
             </div>
