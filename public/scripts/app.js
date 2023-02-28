@@ -82,17 +82,15 @@ async function getAllCoords(e){
   }
 }
 
-if ('geolocation' in navigator) {
-  console.log('geolocation is availabe');
+function setPosition() {
   navigator.geolocation.getCurrentPosition(position => {
     console.log(position.coords.latitude + ", " + position.coords.longitude);
     myPos = [position.coords.latitude, position.coords.longitude]
     map.setView(myPos, 15);
     L.marker(myPos, {icon: myIcon}).addTo(map);
   });
-} else {
-  alert('geolocation not available');
 }
+
 
 map.addEventListener("click", (e) => {
   // $('#portfolioModal1').modal('show');
@@ -115,6 +113,7 @@ function testButton(){
 }
 
 function submitEntry(data) {
+  setPosition();
   console.log("Submitted! ");
   const options = {
     method: 'POST',
@@ -125,6 +124,7 @@ function submitEntry(data) {
     body: JSON.stringify(data)
   }
   fetch('/post', options);
+  location.reload();
 }
 
 const submitForm = document.getElementById('submitForm')
@@ -149,3 +149,10 @@ submitForm.addEventListener('submit', event =>{
   reader.readAsDataURL(formData.get('file'));
   // submitEntry(data);
 });
+
+if ('geolocation' in navigator) {
+  console.log('geolocation is availabe');
+  setPosition();
+} else {
+  alert('geolocation not available');
+}
