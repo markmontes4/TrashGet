@@ -112,7 +112,7 @@ function testButton(){
   console.log(markers);
 }
 
-function submitEntry(data) {
+async function submitEntry(data) {
   setPosition();
   console.log("Submitted! ");
   const options = {
@@ -123,7 +123,7 @@ function submitEntry(data) {
 
     body: JSON.stringify(data)
   }
-  fetch('/post', options);
+  res = await fetch('/post', options);
   location.reload();
 }
 
