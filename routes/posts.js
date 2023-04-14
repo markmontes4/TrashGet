@@ -5,24 +5,19 @@ const multer = require('multer');
 const upload = multer({dest: 'uploads/'});
 const https = require('https');
 const fs = require('fs');
+const { time } = require('console');
 
 function saveImg(data, path){
   var dataString = data.split(",", 2);
   var img64 = dataString[1];
   var buffer = Buffer.from(img64, "base64");
-  fs.writeFileSync(path, buffer, function(err){
-    if(err){
-      console.log(err);
-    }else{
-      console.log("created file success");
-    }
-  });
+  var wait = fs.writeFileSync(path, img64 , "base64")
 }
 
 router.post('/', async (req,res) => {
   console.log(req.body);
-  var path1 = "public/uploads/" + req.body.coords[0] + "_" + req.body.coords[1] + ".png"
-  var path2 = "uploads/" + req.body.coords[0] + "_" + req.body.coords[1] + ".png"
+  var path1 = "public/uploads/" + Date.now() + ".png"
+  var path2 = "uploads/" + Date.now() + ".png"
   saveImg(req.body.img, path1);
   const post = new Post({
     title: req.body.title,

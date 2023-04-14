@@ -1,4 +1,12 @@
+#submitButton{
+  position: absolute;
+  right: 45%;
+}
+#controls{
+  background-color: #CCCCCC;
+  height: 100%;
+}
 #map{
   width: 100%;
-  height: 90vh;
+  height: 80vh;
 }

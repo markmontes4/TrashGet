@@ -10,7 +10,7 @@ const bodyParser = require('body-parser');
 require('dotenv/config');
 
 //Middlewares
-app.use(express.json({limit: '1mb'}));
+app.use(express.json({limit: '10mb'}));
 app.use(bodyParser.json());
 
 //Routes
