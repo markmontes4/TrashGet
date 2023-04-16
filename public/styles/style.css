@@ -1,20 +1,41 @@
 #header{
-  height: 30px;
+  height: 5vh;
   background: #CCCCCC;
 }
 ul li{
   display: inline;
 }
 #submitButton{
-  position: absolute;
-  right: 45%;
+  width: 130px;
 }
 #controls{
   height: 40px;
-  background-color: #CCCCCC;
+  width: 1000px;
 }
+.map-container{  
+  background: #f5f5f5;
+  width: 100%;
+  display: table;
+  table-layout: fixed;
+}
+.map-controls{
+  width: 25vw;
+  margin-left: 0;
+  padding-left: 0;
+  padding-right: 0;
+  display: grid;
+}
+.map-controls li{
+  margin: 0 auto 0 auto;
+}
+
 #map{
   /* visibility: hidden; */
-  width: 100%;
-  height: 80vh;
+  display: table-cell;
+  width: 75vw;
+  height: 90vh;
+}
+#footer{
+  background: #CCCCCC;
+  height: 5vh;
 }
