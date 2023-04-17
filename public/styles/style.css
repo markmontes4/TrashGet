@@ -1,5 +1,5 @@
 #header{
-  height: 6vh;
+  height: 40px;
   background: #CCCCCC;
 }
 #nav-bar{
@@ -11,6 +11,7 @@
 }
 .nav-item{
   padding-left: 10px;
+  margin-top: 2%;
   text-align: center;
   width: 100px;
 }
@@ -47,7 +48,7 @@ ul li{
 }
 #footer{
   background: #CCCCCC;
-  height: 6vh;
+  height: 5vh;
 }
 
 @media only screen and (max-width: 525px) and (max-height: 900px) {
@@ -55,6 +56,6 @@ ul li{
     width: 70px;
   }
   #map{
-    height: 75vh;
+    height: 85vh;
   }
 }
