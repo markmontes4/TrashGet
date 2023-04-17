@@ -2,16 +2,26 @@
   height: 5vh;
   background: #CCCCCC;
 }
+#nav-bar{
+  width: 100%;
+} 
+.nav{
+  display: flex;
+  justify-content: space-between;
+}
+.nav-item{
+  padding-left: 10px;
+  text-align: center;
+  width: 100px;
+}
+
 ul li{
   display: inline;
 }
 #submitButton{
   width: 130px;
 }
-#controls{
-  height: 40px;
-  width: 1000px;
-}
+
 .map-container{  
   background: #f5f5f5;
   width: 100%;
