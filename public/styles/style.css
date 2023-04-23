@@ -38,23 +38,72 @@ ul li{
 
   table-layout: fixed;
 }
+/*Map control Block*/
 .map-controls{
   grid-column: 1;
   grid-row: 2;
   width: 25vw;
-  margin: 0 0 0 0;
-  padding-left: 0;
-  padding-right: 0;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
 }
-.map-controls li{
-  grid-column: 2;
+.map-controls-btn{
+  height: 50px;
+  grid-column: 1;
+  grid-row: 2;
 }
+.map-controls-btn button{
+  margin: 5px 5px 5px 20px;
+}
+.map-controls-search{
+  height: 50px;
+  grid-column: 1;
+  grid-row: 1;
+  margin: 0 0 0 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+.map-controls-search-text{
+  grid-column: 1/2;
+  grid-row: 1;
+}
+#search-bar{
+  grid-column: 1;
+  grid-row: 2;
 
+}
+#searchButton{
+  grid-column: 2;
+  grid-row: 2;
+}
+.map-controls-footer{
+  height: 50px;
+  grid-column: 1;
+  grid-row: 3;
+  padding: 0 0 0 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+/*Map control Block*/
+
+/*Map Collapse Button Block*/
+#map-collapse-btn{
+  grid-column: 2;
+  width: 30px;
+  background: #f5f5f5;
+  border-color: #CCCCCC;
+  border-width: thin;
+  font-size: large;
+  font-weight: bolder;
+}
+/*Map Collapse Button Block*/
+
+/*Map Block*/
 #map{
   /* visibility: hidden; */
-  grid-column: 2/4;
+  grid-column: 3/4;
   grid-row: 2;
   width: 75vw;
   height: 95vh;
@@ -67,11 +116,5 @@ ul li{
 }
 
 @media only screen and (max-width: 525px) and (max-height: 900px) {
-  #submitButton{
-    width: 70px;
-    font-size: small;
-  }
-  #map{
-    height: 85vh;
-  }
+
 }
