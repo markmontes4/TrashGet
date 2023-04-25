@@ -1,13 +1,14 @@
 #header{
-  height: 40px;
+  width: auto;
+  height: auto;
   background: #CCCCCC;
-  grid-column: 1/4;
+  grid-column: 1;
   grid-row: 1;
 }
 
 #main-body{
   display: grid;
-  grid-template-columns: repeat(4,1fr);
+  grid-template-columns: 1fr;
   gap: 10px;
   background: #f5f5f5;
 }
@@ -30,6 +31,7 @@ ul li{
 }
 #submitButton{
   width: 130px;
+  z-index: 100;
 }
 
 .map-container{  
@@ -40,41 +42,56 @@ ul li{
 }
 /*Map control Block*/
 .map-controls{
-  grid-column: 1;
-  grid-row: 2;
-  width: 25vw;
+  width: 80vw;
+  position: absolute;
+  left: 10%;
+  bottom: 5%;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr 1fr;
+  background-color: rgba(204, 204, 204, 0.7);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 25px;
+  z-index: 1;
+  
 }
 .map-controls-btn{
+  margin-top: 40px;
   height: 50px;
   grid-column: 1;
   grid-row: 2;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 .map-controls-btn button{
-  margin: 5px 5px 5px 20px;
-}
-.map-controls-search{
-  height: 50px;
-  grid-column: 1;
-  grid-row: 1;
-  margin: 0 0 0 20px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-}
-.map-controls-search-text{
-  grid-column: 1/2;
-  grid-row: 1;
-}
-#search-bar{
-  grid-column: 1;
-  grid-row: 2;
+  margin: 5px 0 0 20px;
 
 }
+.map-controls-search{
+  height: 80px;
+  width: auto;
+  grid-column: 1;
+  grid-row: 1;
+  margin: 20px 10px 0 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  justify-content: space-evenly;
+  justify-items: center;
+  align-content: space-evenly;
+  align-items: center;
+}
+#search-bar{
+  width: 80%;
+  grid-column: 1;
+  grid-row: 1;
+}
 #searchButton{
-  grid-column: 2;
+  width: 60px;
+  margin: 5px auto 0 50%;
+  grid-column: 1;
   grid-row: 2;
 }
 .map-controls-footer{
@@ -90,7 +107,7 @@ ul li{
 
 /*Map Collapse Button Block*/
 #map-collapse-btn{
-  grid-column: 2;
+  grid-column: 1;
   width: 30px;
   background: #f5f5f5;
   border-color: #CCCCCC;
@@ -103,15 +120,17 @@ ul li{
 /*Map Block*/
 #map{
   /* visibility: hidden; */
-  grid-column: 3/4;
+  grid-column: 1;
   grid-row: 2;
-  width: 75vw;
-  height: 95vh;
+  width: auto;
+  height: 90vh;
+  margin: 0 10px 0 10px;
+  z-index: 0;
 }
 #footer{
   background: #CCCCCC;
   height: 5vh;
-  grid-column: 1/4;
+  grid-column: 1;
   grid-row: 3;
 }
 
