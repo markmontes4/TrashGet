@@ -88,7 +88,6 @@ ul li{
   grid-row: 1;
 }
 #searchButton{
-  justify-content: end;
   width: 60px;
   grid-column: 3;
   grid-row: 1;
@@ -135,7 +134,7 @@ ul li{
 
 @media only screen and (max-width: 525px) and (max-height: 900px) {
   #submitButton{
-    width: 50px;
+    width: 40px;
     height: 25px;
     display: inline-block;
     font-size: x-small;
@@ -155,6 +154,10 @@ ul li{
     justify-content: center;
   }
   #search-bar{
-  width: 250px;
+  grid-column: 1;
+  width: 180px;
+  }
+  #searchButton{
+    grid-column: 2;
   }
 }
