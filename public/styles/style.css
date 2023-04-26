@@ -156,13 +156,13 @@ ul li{
   }
   #search-bar{
   grid-column: 1;
-  width: 216px;
+  width: 200px;
   margin-right: 12px;
   }
   #searchButton{
     grid-column: 2;
   }
   .map-controls-search{
-    margin-left: 35px;
+    margin-left: 15px;
   }
 }
