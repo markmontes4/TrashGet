@@ -112,6 +112,22 @@ function testButton(){
   console.log(markers);
 }
 
+async function searchMap(){
+  const input = $('#search-bar').val();
+  try{
+    const data = await fetch("https://nominatim.openstreetmap.org/search?format=json&limit=3&q=" + input);
+    const jsondata = await data.json();
+    console.log(jsondata);
+    const lat = jsondata[0].lat;
+    const lng = jsondata[0].lon;
+    const newPos = [lat, lng];
+    map.setView(newPos, 15);
+    
+  }catch(error){
+    console.log(error);
+  }
+}
+
 async function submitEntry(data) {
   setPosition();
   console.log("Submitted! ");
