@@ -131,7 +131,8 @@ ul li{
   grid-row: 3;
 }
 
-@media only screen and (max-width: 525px) and (max-height: 900px) {
+@media only screen and ((max-width: 600px) and (max-height: 1000px)) 
+{
   #submitButton{
     width: 40px;
     height: 25px;
@@ -146,6 +147,42 @@ ul li{
   }
   .map-controls{
     height: 150px;
+    bottom: 2%;
+  }
+  .map-controls-btn{
+    margin: 0 0 0 0;
+    display: flex;
+    justify-content: center;
+  }
+  #search-bar{
+  grid-column: 1;
+  width: 200px;
+  margin-right: 12px;
+  }
+  #searchButton{
+    grid-column: 2;
+  }
+  .map-controls-search{
+    margin-left: 15px;
+  }
+}
+@media only screen and ((max-width: 1000px) and (max-height: 600px)) 
+{
+  #submitButton{
+    width: 40px;
+    height: 25px;
+    display: inline-block;
+    font-size: x-small;
+    text-align: center;
+    margin: 0 5px 0 5px;
+    padding: 0 0 0 0;
+  }
+  .map-controls-footer{
+    visibility: hidden;
+  }
+  .map-controls{
+    height: 135px;
+    width: 300px;
     bottom: 2%;
   }
   .map-controls-btn{
