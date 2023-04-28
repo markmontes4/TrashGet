@@ -91,11 +91,16 @@ ul li{
   grid-column: 3;
   grid-row: 1;
 }
-.map-controls-footer{
-  height: 50px;
+.map-controls-footer-container{
+  height: 100%;
+  width: 100%;
   grid-column: 1;
   grid-row: 3;
+  position: relative;
+}
+.map-controls-footer{
   padding: 0 0 0 0;
+  margin: 0 20px 0 20px;
   position: absolute;
   bottom: 0;
   left: 0;
