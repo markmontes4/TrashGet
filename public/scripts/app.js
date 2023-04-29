@@ -172,3 +172,21 @@ if ('geolocation' in navigator) {
 } else {
   alert('geolocation not available');
 }
+
+$('.map-controls-footer').click( () => {
+  const scaleDown = [
+    {height: "50px"},
+    {overflow: "hidden"},
+  ];
+  const scaleDownTiming = {
+    duration: 300,
+    iteration: 1,
+  };
+
+
+});
+
+function collapseControls(){
+  const mapControls = document.querySelector(".map-controls");
+  mapControls.setAttribute('id', 'map-controls');
+}

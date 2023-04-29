@@ -54,7 +54,10 @@ ul li{
   border-width: 1px;
   border-radius: 25px;
   z-index: 1;
-   
+}
+#map-controls{
+  animation: collapse 1s 0s;
+  animation-fill-mode: forwards;
 }
 .map-controls-btn{
   height: 50px;
@@ -99,11 +102,17 @@ ul li{
   position: relative;
 }
 .map-controls-footer{
+  background: #CCCCCC;
+  height: 30px;
+  width: 100%;
   padding: 0 0 0 0;
-  margin: 0 20px 0 20px;
+  margin: 0 0  0;
   position: absolute;
   bottom: 0;
   left: 0;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  border-width: thin;
 }
 /*Map control Block*/
 
@@ -147,9 +156,6 @@ ul li{
     margin: 0 5px 0 5px;
     padding: 0 0 0 0;
   }
-  .map-controls-footer{
-    visibility: hidden;
-  }
   .map-controls{
     height: 150px;
     bottom: 2%;
@@ -182,9 +188,6 @@ ul li{
     margin: 0 5px 0 5px;
     padding: 0 0 0 0;
   }
-  .map-controls-footer{
-    visibility: hidden;
-  }
   .map-controls{
     height: 135px;
     width: 300px;
@@ -207,3 +210,13 @@ ul li{
     margin-left: 15px;
   }
 }
+
+/* Animation */
+@keyframes collapse {
+  to {
+    height: 0;
+    visibility: hidden;
+  }
+  
+}
+
