@@ -188,5 +188,14 @@ $('.map-controls-footer').click( () => {
 
 function collapseControls(){
   const mapControls = document.querySelector(".map-controls");
-  mapControls.setAttribute('id', 'map-controls');
+  const expandControl = document.querySelector("#expand-controls");
+  mapControls.setAttribute('id', 'map-controls-collapse');
+  expandControl.style.visibility = "visible";
+}
+
+function expandControls(){
+  const mapControls = document.querySelector(".map-controls");
+  const expandControl = document.querySelector("#expand-controls");
+  mapControls.setAttribute('id', 'map-controls-expand');
+  expandControl.style.visibility = "hidden";
 }

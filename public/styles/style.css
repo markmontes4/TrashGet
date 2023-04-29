@@ -55,8 +55,12 @@ ul li{
   border-radius: 25px;
   z-index: 1;
 }
-#map-controls{
+#map-controls-collapse{
   animation: collapse 1s 0s;
+  animation-fill-mode: forwards;
+}
+#map-controls-expand{
+  animation: expand 1s 0s;
   animation-fill-mode: forwards;
 }
 .map-controls-btn{
@@ -137,6 +141,14 @@ ul li{
   height: 90vh;
   margin: 0 10px 0 10px;
   z-index: 0;
+}
+#expand-controls{
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  bottom: 30px;
+  background: #CCCCCC;
+  visibility: hidden;
 }
 #footer{
   background: #CCCCCC;
@@ -220,3 +232,10 @@ ul li{
   
 }
 
+@keyframes expand {
+  to {
+    height: auto;
+    visibility: visible;
+  }
+  
+}
