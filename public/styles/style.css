@@ -81,7 +81,7 @@ ul li{
   grid-row: 1;
   margin: 10px 0 0 50px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
   justify-content: space-evenly;
   justify-items: center;
@@ -106,7 +106,7 @@ ul li{
   position: relative;
 }
 .map-controls-footer{
-  background: #CCCCCC;
+  background-color: rgba(204, 204, 204, 0.7);
   height: 30px;
   width: 100%;
   padding: 0 0 0 0;
@@ -116,7 +116,7 @@ ul li{
   left: 0;
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
-  border-width: thin;
+  border: none;
 }
 /*Map control Block*/
 
@@ -146,8 +146,8 @@ ul li{
   z-index: 2;
   position: absolute;
   left: 0;
-  bottom: 30px;
-  background: #CCCCCC;
+  bottom: 5%;
+  background-color: rgba(204, 204, 204, 0.7);
   visibility: hidden;
 }
 #footer{
@@ -166,6 +166,7 @@ ul li{
   to {
     height: 0;
     visibility: hidden;
+
   }
   
 }
@@ -215,15 +216,15 @@ ul li{
   }
   #search-bar{
   grid-column: 1;
-  width: 200px;
-  margin-right: 12px;
+  width: 250px;
   }
   #searchButton{
     grid-column: 2;
   }
   .map-controls-search{
-    margin-left: 15px;
+    margin: 0 0 0 50px;
   }
+
   @keyframes collapse {
     from{
       height: 150px;
