@@ -216,13 +216,13 @@ ul li{
   }
   #search-bar{
   grid-column: 1;
-  width: 250px;
+  width: 200px;
   }
   #searchButton{
     grid-column: 2;
   }
   .map-controls-search{
-    margin: 0 0 0 50px;
+    margin: 0 0 0 10px;
   }
 
   @keyframes collapse {
