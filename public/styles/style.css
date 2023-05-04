@@ -157,8 +157,44 @@ ul li{
   grid-row: 3;
 }
 
+/* Animation */
+@keyframes collapse {
+  from{
+    height: 150px;
+    visibility: visible;
+  }
+  to {
+    height: 0;
+    visibility: hidden;
+  }
+  
+}
+
+@keyframes expand {
+  from{
+    height: 0;
+    visibility: hidden;
+  }
+  to {
+    height: 270px;
+    visibility: visible;
+  }
+  
+}
+
+
+
+
 @media only screen and (max-width: 600px) and (max-height: 900px)
 {
+  #map-controls-collapse{
+    animation: collapse ease 1s 0s;
+    animation-fill-mode: forwards;
+  }
+  #map-controls-expand{
+    animation: expand ease 1s 0s;
+    animation-fill-mode: forwards;
+  }
   #submitButton{
     width: 40px;
     height: 25px;
@@ -214,6 +250,14 @@ ul li{
 }
 @media only screen and (max-width: 900px) and (max-height: 525px)
 {
+  #map-controls-collapse{
+    animation: collapse ease 1s 0s;
+    animation-fill-mode: forwards;
+  }
+  #map-controls-expand{
+    animation: expand ease 1s 0s;
+    animation-fill-mode: forwards;
+  }
   #submitButton{
     width: 40px;
     height: 25px;
@@ -269,27 +313,4 @@ ul li{
   }
 }
 
-/* Animation */
-@keyframes collapse {
-  from{
-    height: 150px;
-    visibility: visible;
-  }
-  to {
-    height: 0;
-    visibility: hidden;
-  }
-  
-}
 
-@keyframes expand {
-  from{
-    height: 0;
-    visibility: hidden;
-  }
-  to {
-    height: 270px;
-    visibility: visible;
-  }
-  
-}
