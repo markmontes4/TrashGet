@@ -56,11 +56,11 @@ ul li{
   z-index: 1;
 }
 #map-controls-collapse{
-  animation: collapse 1s 0s;
+  animation: collapse ease 1s 0s;
   animation-fill-mode: forwards;
 }
 #map-controls-expand{
-  animation: expand 1s 0s;
+  animation: expand ease 1s 0s;
   animation-fill-mode: forwards;
 }
 .map-controls-btn{
@@ -221,10 +221,37 @@ ul li{
   .map-controls-search{
     margin-left: 15px;
   }
+    @keyframes collapse {
+    from{
+      height: 150px;
+      visibility: visible;
+    }
+    to {
+      height: 0;
+      visibility: hidden;
+    }
+    
+  }
+
+  @keyframes expand {
+    from{
+      height: 0;
+      visibility: hidden;
+    }
+    to {
+      height: 150px;
+      visibility: visible;
+    }
+    
+  }
 }
 
 /* Animation */
 @keyframes collapse {
+  from{
+    height: 150px;
+    visibility: visible;
+  }
   to {
     height: 0;
     visibility: hidden;
@@ -233,8 +260,12 @@ ul li{
 }
 
 @keyframes expand {
+  from{
+    height: 0;
+    visibility: hidden;
+  }
   to {
-    height: auto;
+    height: 270px;
     visibility: visible;
   }
   
