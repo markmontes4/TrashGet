@@ -223,7 +223,7 @@ ul li{
   }
     @keyframes collapse {
     from{
-      height: 150px;
+      height: 135px;
       visibility: visible;
     }
     to {
@@ -239,7 +239,7 @@ ul li{
       visibility: hidden;
     }
     to {
-      height: 150px;
+      height: 135px;
       visibility: visible;
     }
     
